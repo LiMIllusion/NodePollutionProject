@@ -1,0 +1,32 @@
+  <!DOCTYPE html>
+  <html lang="it">
+  <head>
+      <%-include('./partials/head')%>
+  </head>
+  <body>
+      <%-include('./partials/navbar')%>
+      <div class="container py-3">
+        <%-include('./partials/messages')%>
+        <form action="/uploadFile" enctype="multipart/form-data" method="POST"> 
+          <div class="form-group">
+            <div class="form-group">
+              <label for="city">Città</label>
+              <input type="text" name="city" class="form-control" id="city" placeholder="Roma">
+            </div>
+            <div class="form-group">
+              <label for="address">Via</label>
+              <input type="text" name="address" class="form-control" id="address" placeholder="via del corso, 2">
+            </div>
+            <div class="form-group">
+              <label for="address">Descrizione</label>
+              <textarea class="form-control" aria-label="With textarea" name="description" placeholder="Descrivi la situazione che stai condividendo"></textarea>
+            </div>
+          </div>
+          <input type="file" name="post" accept="image/*" class="py-3"/>
+          <button type="submit" class="btn btn-primary btn-block green-custom">Pubblica</button>
+        </form>
+      </div>
+      
+  </body>
+  </html>
+  

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head')%>
+</head>
+<body>
+    <%-include('./partials/navbar')%>
+    <div class="container py-3">
+        <div class="card" style="opacity: 4;">
+        <img src="" alt="">
+        <div class="card-body">
+            <h5 class="card-title py-2">
+                Accedi
+            </h5>
+            <div class="col">    
+                <div class="card-text">
+                    <%-include('./partials/messages')%>
+                    <form  action="/users/login" method="POST">
+                        <div class="form-group">
+                            <label for="email">Indirizzo email</label>
+                            <input type="email" class="form-control" name="email" placeholder="mariorossi@mail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" id="password" name="password" type="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block green-custom">Accedi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

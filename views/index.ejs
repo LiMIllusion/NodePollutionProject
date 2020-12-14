@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head')%>
+</head>
+<body>
+    <%-include('./partials/navbar')%>
+    <div class="container">
+        <div class="row py-3">
+            <% if(typeof posts != 'undefined') { %>
+                <% posts.forEach((post)=>{%>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="/images/uploads/<%=post.filename%>" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title"><%=post.address%>, <%=post.city%></h5>
+                                <p class="card-text"><%=post.description%></p>
+                            </div>
+                        </div>
+                    </div>
+                <%})}%>
+        </div>
+    </div>
+</body>
+</html>
