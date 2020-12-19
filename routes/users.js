@@ -41,11 +41,8 @@ router.post('/register', function(req, res, next) {
   if(password !=password2){
     errors.push({msg: "Le password non combaciano"})
   }
-  console.log("AAA")
-  console.log(password)
-  if(password.length > 8){
+  if(password.length < 8){
     errors.push({msg: "La password deve essere di almeno 8 caratteri"})
-    console.log("male")
   }
   if(errors.length > 0){
     res.render('register',{
