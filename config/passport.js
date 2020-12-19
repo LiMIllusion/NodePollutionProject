@@ -8,7 +8,7 @@ module.exports = function(passport){
         new LocalStrategy({
             usernameField : 'email',
         }, (email, password, done)=>{
-            User.find(email, function(err, users){
+            User.find({'email' : email}, function(err, users){
                 if(users.length == 0){
                     return done(null, false, {message : 'Account inesistente'})
                 }
