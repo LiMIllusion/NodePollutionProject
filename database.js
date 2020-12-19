@@ -3,10 +3,10 @@ var mysql = require('mysql');
 module.exports = class Database{
   constructor(){
     this.connection = mysql.createConnection({
-      host     : '',
-      user     : '',
-      password : '',
-      database : ''
+      host     : process.env['DATABASE_HOST'],
+      user     : process.env['DATABASE_USER'],
+      password : process.env['DATABASE_PASSWORD'],
+      database : process.env['DATABASE_NAME']
     });
   }
   connect(){

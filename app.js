@@ -8,7 +8,7 @@ var session = require('express-session')
 var flash = require('connect-flash')
 var passport = require('passport')
 require("./config/passport")(passport)
-
+require('dotenv').config({path: __dirname + '/.env'})
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -25,7 +25,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(session({
-  secret:'',
+  secret:process.env['SESSION_SECRET'],
   resave:false,
   saveUninitialized:false
 }))
